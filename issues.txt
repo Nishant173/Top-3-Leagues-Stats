@@ -1,0 +1,6 @@
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+
+Number of teams: 69
+TypeError: string indices must be integers
+
+Bundesliga 2000 or 2001
