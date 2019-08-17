@@ -157,7 +157,7 @@ points_pygal = list(df['PointsPts'])
 clubs_pygal = list(df['Club'])
 
 # Plotting - Function calls.
-folder_png = "plots_png"
+folder_png = "{} - {} - Plots PNG".format(league, year_str)
 os.mkdir(folder_png)
 pu.plot_points(league = league, team_names = clubs, values = points, color = colors[0], year_str = year_str, folder_png = folder_png)
 pu.plot_gd(league = league, team_names = clubs, values = gd, color = colors[1], year_str = year_str, folder_png = folder_png)
@@ -168,11 +168,11 @@ pu.plot_gf(league = league, team_names = clubs, values = gf, color = colors[5], 
 pu.plot_ga(league = league, team_names = clubs, values = ga, color = colors[6], year_str = year_str, folder_png = folder_png)
 pu.plot_gp(league = league, team_names = clubs, values = gp, color = colors[7], year_str = year_str, folder_png = folder_png)
 
-folder_svg = "plots_svg"
+folder_svg = "{} - {} - Plots SVG".format(league, year_str)
 os.mkdir(folder_svg)
 pu.plot_pygal_all(year_str, folder_svg, number_of_teams, clubs_pygal, points_pygal, gd_pygal, gf_pygal, ga_pygal, wins_pygal, losses_pygal, draws_pygal, gp_pygal, league = league)
 
-sorted_plots_folder_name = "plots_sorted"
+sorted_plots_folder_name = "{} - {} - Plots PNG Sorted".format(league, year_str)
 os.mkdir(sorted_plots_folder_name)
 df_sorted_by = df.set_index(keys = ['Club'])
 pu.plot_sorted_all(df_sorted_by = df_sorted_by, year_str = year_str, sorted_plots_folder_name = sorted_plots_folder_name, league = league)
