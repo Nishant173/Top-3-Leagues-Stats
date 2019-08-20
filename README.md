@@ -1,7 +1,7 @@
 # Top-3-Leagues-Stats
 Statistics of the Top 3 European Football Leagues (EPL, LaLiga, Bundesliga).
 
-# Depencencies
+# Dependencies
 - csv==1.0
 - urllib.request==3.6
 - bs4==4.7.1
