@@ -60,10 +60,10 @@ def read_data_bundesliga():
         f.close()
         
         # Data reading.
-        df = pd.read_csv("bundesliga_table.csv", header = None)
-        df = pd.read_csv("bundesliga_table.csv", names = ["PositionPos", "Club", "PlayedPl", "WonW","DrawnD","LostL","GF","GA","GD","PointsPts"])
+        df = pd.read_csv("bundesliga_table.csv", encoding='latin-1', header = None)
+        df = pd.read_csv("bundesliga_table.csv", encoding='latin-1', names = ["PositionPos", "Club", "PlayedPl", "WonW","DrawnD","LostL","GF","GA","GD","PointsPts"])
         if(df["PositionPos"][1] == 2) is False:
-            df = pd.read_csv("bundesliga_table.csv", names = ["Club", "PlayedPl", "WonW","DrawnD","LostL","GF","GA","GD","PointsPts", "Nothing"])
+            df = pd.read_csv("bundesliga_table.csv", encoding='latin-1', names = ["Club", "PlayedPl", "WonW","DrawnD","LostL","GF","GA","GD","PointsPts", "Nothing"])
             df = df.drop("Nothing", axis = 1)
             df["PositionPos"] = np.arange(1, 19)
             print("Dataset reading with additional changes done.")    
